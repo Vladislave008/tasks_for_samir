@@ -1,6 +1,6 @@
+from collections.abc import Iterable
 def unique_preserve_order(iterable) -> list:
     '''Удаляет дубликаты с сохранением порядка элементов'''
-    from collections.abc import Iterable
     if not isinstance(iterable, Iterable):
         raise Exception('Bad input')
     processed = set()   # проверка на наличие элемента в set() будет быстрее, чем проверка в результирующем list(), 
