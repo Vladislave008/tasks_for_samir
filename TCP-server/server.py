@@ -41,7 +41,8 @@ def start_tcp_server():
                 print(f'Received HTTP request from {client_address}')
                 parsed_request = parse_http_request(request_data)
                 if parsed_request:
-                    response_text = f'''HTTP Request Parsed Successfully:
+                    response_text = f'''
+HTTP Request Parsed Successfully:
 Method: {parsed_request['method']}
 Path: {parsed_request['path']}
 Version: {parsed_request['version']}
@@ -56,7 +57,8 @@ Headers:
                     response_text += f'\nClient: {client_address[0]}:{client_address[1]}'
                 else:
                     response_text = 'Error: Invalid HTTP request format'
-                http_response = f'''HTTP/1.1 200 OK
+                http_response = f'''
+HTTP/1.1 200 OK
 Content-Type: text/plain
 Content-Length: {len(response_text)}
 Connection: close
